@@ -21,6 +21,33 @@ async function loginWalletconnect() {
         });
     }
   }
+
+
+  async function login() {
+    let user = Moralis.User.current();
+    if (!user) {
+        try {
+            user = await Moralis.authenticate({ signingMessage: "Authenticate" })
+            console.log(user)
+            console.log(user.get('ethAddress'))
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+
+async function mint() {
+    let options = {
+        contractAddress: '0x356d2E7a0d592bAd95E86d19479c37cfdBb68Ab9',
+        functionName: "mint",
+        abi: '{"inputs":[{"internalType":"uint256","name":"_mintAmount","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"}',
+        Params: {},
+        msgValue: Moralis.Units.ETH(0.1)
+    }
+    await Moralis.executeFunction(options)
+
+   }
   
 
   async function logOut() {
