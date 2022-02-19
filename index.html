@@ -16,8 +16,12 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Poppins:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital@0;1&amp;display=swap"
         rel="stylesheet">
     <link media="all" rel="stylesheet" href="css/main.css">
-    <script src="js/jquery-3.3.1.min.js" defer="defer"></script>
-    <script src="js/jquery.main.js" defer="defer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script src="https://github.com/WalletConnect/walletconnect-monorepo/releases/download/1.6.2/web3-provider.min.js"></script>
+    <script src="/js/main.js"></script>
+
+
 
 </head>
 
@@ -42,6 +46,7 @@
             </div>
         </header>
         <main id="main">
+            
             <section class="banner viewport-section" id="section1">
                 <div class="container">
                     <div class="bg-stretch bg-holloween"><span
@@ -56,6 +61,9 @@
                     <div class="ghosts">
                         <img width="40%" src="/images/logo.png" alt="">
                     </div>
+                    <button onclick="loginWalletconnect()" id=”btn-login”>Moralis Metamask Login</button>
+                    <button onclick="logOut()" id=”btn-login”>Moralisn</button>
+
                     <div id="mint">
                         <div class="form">
                             <a href="https://opensea.io/collection/babyghosts?search[sortAscending]=true&amp;search[sortBy]=PRICE&amp;search[toggles][0]=BUY_NOW"
@@ -70,10 +78,7 @@
             </section>
         </div>
 
-    <script src="static/js/2.6f978deb.chunk.js"></script>
-    <script src="static/js/main.80a873f8.chunk.js"></script>
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
-        data-cf-beacon='{"token": "85847cdd47754d4199322d507ec61918"}'></script>
+
 </body>
 
 </html>
